@@ -1,0 +1,39 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.11-SNAPSHOT'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'com.coinshift'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+	maven { url 'https://repo.spring.io/milestone' }
+	maven { url 'https://repo.spring.io/snapshot' }
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.projectlombok:lombok:1.18.20'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	runtimeOnly 'com.mysql:mysql-connector-j'
+	runtimeOnly 'org.postgresql:postgresql'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation group: 'org.web3j', name: 'core', version: '5.0.0'
+
+	implementation "org.springframework:spring-jms"
+
+	implementation "org.springframework:spring-jms"
+	implementation group: 'com.amazonaws', name: 'amazon-sqs-java-messaging-lib', version: '1.0.4'
+	implementation group: 'com.amazonaws', name: 'aws-java-sdk-sqs', version: '1.11.503'
+
+	implementation group: 'org.springframework.cloud', name: 'spring-cloud-aws-messaging', version: '1.0.0.RELEASE'
+
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

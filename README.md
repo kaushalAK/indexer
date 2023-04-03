@@ -1,2 +1,2 @@
 # indexer
-A transaction and block indexer for blockchain in JAVA using Web3j
+JAVA based blockchain txn indexer
